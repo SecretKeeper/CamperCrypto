@@ -35,7 +35,10 @@ const MenuC = (): JSX.Element => {
 		return Object.keys(menu).map((key) => {
 			if (typeof menu[key] == "string") {
 				return (
-					<li key={key} className="mr-5">
+					<li
+						key={key}
+						className="hover:cursor-pointer hover:text-blue-accent mr-5"
+					>
 						{menu[key]}
 					</li>
 				);
