@@ -4,7 +4,7 @@ import { ExpandMore } from "@mui/icons-material";
 import { capitalizeFirstLetter } from "@/utilities";
 
 // menu should be key value as string or nested menu
-type Menu = { [key: string]: string | { [key: string]: string } };
+type MenuType = { [key: string]: string | MenuType };
 
 const MenuC = (): JSX.Element => {
 	// i am going to create dynamic menu parser to add and remove with convenience
@@ -21,17 +21,19 @@ const MenuC = (): JSX.Element => {
 		},
 	};
 
-	const parseSubMenus = (menu: Menu) => {
+	const parseSubMenus = (menu: MenuType) => {
 		return Object.keys(menu).map((key) => {
 			return (
 				<Menu.Item key={key}>
-					<div className="py-3 px-4 hover:cursor-pointer">{menu[key]}</div>
+					<div className="py-3 px-4 hover:cursor-pointer">
+						{menu[key].toString()}
+					</div>
 				</Menu.Item>
 			);
 		});
 	};
 
-	const parseMenus = (menu: Menu) => {
+	const parseMenus = (menu: MenuType) => {
 		return Object.keys(menu).map((key) => {
 			if (typeof menu[key] == "string") {
 				return (
@@ -39,7 +41,7 @@ const MenuC = (): JSX.Element => {
 						key={key}
 						className="hover:cursor-pointer hover:text-blue-accent mr-5"
 					>
-						{menu[key]}
+						{menu[key].toString()}
 					</li>
 				);
 			} else {
@@ -59,7 +61,7 @@ const MenuC = (): JSX.Element => {
 							leaveTo="transform opacity-0 scale-95"
 						>
 							<Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-								{parseSubMenus(menu[key])}
+								{parseSubMenus(menu[key] as MenuType)}
 							</Menu.Items>
 						</Transition>
 					</Menu>
