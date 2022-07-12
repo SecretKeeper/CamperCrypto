@@ -1,3 +1,4 @@
 import capitalizeFirstLetter from "./capitalizeFirstLetter";
+import MUITheme from "./muiTheme";
 
-export { capitalizeFirstLetter };
+export { capitalizeFirstLetter, MUITheme };
