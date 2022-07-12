@@ -3,11 +3,11 @@ import { MUITheme } from "@/utilities";
 
 const AuthActions = (): JSX.Element => (
 	<ThemeProvider theme={MUITheme}>
-		<div className="flex flex-grow items-center justify-end">
-			<div className="hover:cursor-pointer hover:text-blue-accent mr-5">
-				Sign In
+		<div className="rtl flex flex-grow items-center justify-end">
+			<div className="hover:cursor-pointer hover:text-blue-accent ml-5">
+				ورود
 			</div>
-			<Button variant="contained">Try it for free</Button>
+			<Button variant="contained">رایگان شروع کنید</Button>
 		</div>
 	</ThemeProvider>
 );

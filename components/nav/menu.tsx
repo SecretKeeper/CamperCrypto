@@ -9,15 +9,15 @@ type MenuType = { [key: string]: string | MenuType };
 const MenuC = (): JSX.Element => {
 	// i am going to create dynamic menu parser to add and remove with convenience
 	const navso = {
-		features: "Features",
-		plans: "Plans",
-		ambassador: "Ambassador Program",
-		priceCharts: "Price Charts",
-		blog: "Blog",
-		more: {
-			one: "One",
-			two: "Two",
-			three: "Three",
+		features: "خدمات",
+		plans: "پکیج ها",
+		ambassador: "آمار",
+		priceCharts: "نشانی",
+		blog: "بلاگ",
+		دیگر: {
+			one: "تست یک",
+			two: "تست دو",
+			three: "تست سه",
 		},
 	};
 
@@ -39,7 +39,7 @@ const MenuC = (): JSX.Element => {
 				return (
 					<li
 						key={key}
-						className="hover:cursor-pointer hover:text-blue-accent mr-5"
+						className="hover:cursor-pointer hover:text-blue-accent mx-5"
 					>
 						{menu[key].toString()}
 					</li>
@@ -72,7 +72,7 @@ const MenuC = (): JSX.Element => {
 
 	return (
 		<menu className="flex">
-			<ul className="flex list-none">{parseMenus(navso)}</ul>
+			<ul className="rtl flex list-none">{parseMenus(navso)}</ul>
 		</menu>
 	);
 };
