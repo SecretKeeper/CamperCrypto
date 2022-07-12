@@ -9,6 +9,9 @@ module.exports = {
 			colors: {
 				"blue-accent": "#2354e7",
 			},
+			fontFamily: {
+				vazir: ["Vazir"],
+			},
 		},
 	},
 	plugins: [],
