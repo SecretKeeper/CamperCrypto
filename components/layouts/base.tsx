@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import StickyNavigation from "../stickyNavigation";
+import Navigation from "@/components/nav/nav";
 
 type Props = {
 	children: ReactNode;
@@ -8,7 +8,7 @@ type Props = {
 const BaseLayout = ({ children }: Props): JSX.Element => {
 	return (
 		<>
-			<StickyNavigation />
+			<Navigation />
 			<main className="flex justify-center">
 				<div className="container">{children}</div>
 			</main>
