@@ -6,6 +6,7 @@ import FirstIntro from "@/components/home/firstIntro";
 import SecondIntro from "@/components/home/secondIntro";
 import Pricing from "@/components/home/pricing";
 import DownloadSection from "@/components/home/download";
+import ServicesSection from "@/components/home/services";
 
 const Home: NextPage = (): JSX.Element => {
 	return (
@@ -21,6 +22,7 @@ const Home: NextPage = (): JSX.Element => {
 			<FirstIntro />
 			<SecondIntro />
 			<Pricing />
+			<ServicesSection />
 			<DownloadSection />
 		</div>
 	);
