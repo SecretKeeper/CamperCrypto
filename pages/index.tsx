@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Navigation from "@/components/nav/nav";
 import Header from "@/components/header/header";
 import FirstIntro from "@/components/home/firstIntro";
 import SecondIntro from "@/components/home/secondIntro";
 import Pricing from "@/components/home/pricing";
+import DownloadSection from "@/components/home/download";
 
 const Home: NextPage = (): JSX.Element => {
 	return (
@@ -21,6 +21,7 @@ const Home: NextPage = (): JSX.Element => {
 			<FirstIntro />
 			<SecondIntro />
 			<Pricing />
+			<DownloadSection />
 		</div>
 	);
 };
