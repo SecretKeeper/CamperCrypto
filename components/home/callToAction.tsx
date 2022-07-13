@@ -11,7 +11,7 @@ type Props = {
 
 const CallToAction = ({ title, description, onClick }: Props): JSX.Element => (
 	<ThemeProvider theme={MUITheme}>
-		<div className="container mx-auto mt-28">
+		<section className="container mx-auto mt-28">
 			<div className="rtl flex items-center bg-blue-accent rounded-lg py-8 px-10">
 				<div className="flex-grow text-white">
 					<h3 className="text-xl font-bold mb-4">{title}</h3>
@@ -28,7 +28,7 @@ const CallToAction = ({ title, description, onClick }: Props): JSX.Element => (
 					</Button>
 				</div>
 			</div>
-		</div>
+		</section>
 	</ThemeProvider>
 );
 
