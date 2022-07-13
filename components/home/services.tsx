@@ -27,10 +27,34 @@ const services = [
 		description:
 			"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است		",
 	},
+	{
+		imagePath: "/images/analytics.png.webp",
+		title: "بصورت آنلاین و خودکار",
+		description:
+			"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است		",
+	},
+	{
+		imagePath: "/images/calls.png.webp",
+		title: "برآوردگر هزینه",
+		description:
+			"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است		",
+	},
+	{
+		imagePath: "/images/record-2.png.webp",
+		title: "ساخت در مقابل خرید",
+		description:
+			"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است		",
+	},
+	{
+		imagePath: "/images/support.png.webp",
+		title: "قیمت گذاری",
+		description:
+			"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است		",
+	},
 ];
 
 const Service = ({ imagePath, title, description }: Service): JSX.Element => (
-	<div>
+	<div className="mb-8">
 		<Image src={imagePath} alt="me" width="64" height="64" />
 		<h3 className="text-xl font-bold mb-3 mt-2">{title}</h3>
 		<p className="">{description}</p>
