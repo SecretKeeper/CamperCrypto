@@ -2,9 +2,13 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ExpandMore } from "@mui/icons-material";
 import { capitalizeFirstLetter } from "@/utilities";
+import Image from "next/image";
 
 // menu should be key value as string or nested menu
-type MenuType = { [key: string]: string | MenuType };
+type SubMenu = { title: string; description: string; icon: string };
+type MenuType = {
+	[key: string]: string | SubMenu[];
+};
 
 const MenuC = (): JSX.Element => {
 	// i am going to create dynamic menu parser to add and remove with convenience
@@ -14,19 +18,79 @@ const MenuC = (): JSX.Element => {
 		ambassador: "آمار",
 		priceCharts: "نشانی",
 		blog: "بلاگ",
-		دیگر: {
-			one: "تست یک",
-			two: "تست دو",
-			three: "تست سه",
-		},
+		دیگر: [
+			{
+				title: "تست یک",
+				description:
+					"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+				icon: "bulb-light",
+			},
+			{
+				title: "تست دو",
+				description:
+					"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+				icon: "calendar",
+			},
+			{
+				title: "تست سه",
+				description:
+					"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+				icon: "chart-graph",
+			},
+			{
+				title: "تست چهار",
+				description:
+					"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+				icon: "chat-message",
+			},
+			{
+				title: "تست پنچ",
+				description:
+					"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+				icon: "clock",
+			},
+			{
+				title: "تست شش",
+				description:
+					"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+				icon: "cog-gear",
+			},
+			{
+				title: "تست هفت",
+				description:
+					"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+				icon: "globe",
+			},
+			{
+				title: "تست هشت",
+				description:
+					"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+				icon: "laptop",
+			},
+			{
+				title: "تست نه",
+				description:
+					"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است",
+				icon: "leadership",
+			},
+		],
 	};
 
-	const parseSubMenus = (menu: MenuType) => {
-		return Object.keys(menu).map((key) => {
+	const parseSubMenus = (menu: SubMenu[]) => {
+		return menu.map((menu, key) => {
 			return (
 				<Menu.Item key={key}>
-					<div className="py-3 px-4 hover:cursor-pointer">
-						{menu[key].toString()}
+					<div className="flex py-3 px-4 hover:cursor-pointer ">
+						<Image
+							src={`/images/menu/${menu.icon}.svg`}
+							alt={menu.title}
+							width={90}
+							height={70}
+						/>
+						<div className="mr-2 hover:bg-blue-accent hover:text-white rounded px-3 py-4">
+							<div className="font-bold pb-1">{menu.title}</div>
+							<div className="text-sm">{menu.description}</div>
+						</div>
 					</div>
 				</Menu.Item>
 			);
@@ -46,7 +110,7 @@ const MenuC = (): JSX.Element => {
 				);
 			} else {
 				return (
-					<Menu as="div" key={key} className="relative">
+					<Menu as="div" key={key}>
 						{/* when defining nested menus we read label from its key and need to capitalize the first letter */}
 						<Menu.Button>
 							{capitalizeFirstLetter(key)} <ExpandMore />
@@ -60,8 +124,8 @@ const MenuC = (): JSX.Element => {
 							leaveFrom="transform opacity-100 scale-100"
 							leaveTo="transform opacity-0 scale-95"
 						>
-							<Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-								{parseSubMenus(menu[key] as MenuType)}
+							<Menu.Items className="grid grid-cols-3 w-screen absolute z-10 right-0 mt-7 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+								{parseSubMenus(menu[key] as SubMenu[])}
 							</Menu.Items>
 						</Transition>
 					</Menu>
