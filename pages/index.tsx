@@ -10,6 +10,8 @@ import ServicesSection from "@/components/home/services";
 import CallToAction from "@/components/home/callToAction";
 import BaseLayout from "@/components/layouts/base";
 import ManageExchanges from "@/components/home/manageExchanges";
+import Blog from "@/components/blog/blogCard";
+import Blogs from "@/components/home/blogs";
 
 const Home: NextPage = (): JSX.Element => {
 	return (
@@ -34,6 +36,7 @@ const Home: NextPage = (): JSX.Element => {
 					buttonName="شروع کنید"
 				/>
 				<ServicesSection />
+				<Blogs />
 				<DownloadSection />
 			</BaseLayout>
 		</div>
