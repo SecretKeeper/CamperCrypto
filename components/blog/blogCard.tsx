@@ -6,9 +6,9 @@ import { MUITheme } from "@/utilities";
 
 const Blog = ({ title, category, image }: Blog): JSX.Element => (
 	<ThemeProvider theme={MUITheme}>
-		<Card className="rtl shadow-none border rounded p-0">
-			<CardActionArea className="p-0">
-				<CardContent className="p-0">
+		<Card className="rtl shadow-none border rounded !p-0">
+			<CardActionArea className="!p-0">
+				<CardContent className="!p-0">
 					<Image
 						alt="title"
 						width={500}
@@ -18,7 +18,10 @@ const Blog = ({ title, category, image }: Blog): JSX.Element => (
 					/>
 					<div className="px-4 pb-4">
 						<h1 className="font-bold text-lg">{title}</h1>
-						<Chip label={category} className="bg-blue-accent text-white mt-4" />
+						<Chip
+							label={category}
+							className="!bg-blue-accent !text-white mt-4"
+						/>
 					</div>
 				</CardContent>
 			</CardActionArea>

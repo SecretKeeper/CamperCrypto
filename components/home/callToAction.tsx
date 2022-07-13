@@ -21,7 +21,7 @@ const CallToAction = ({ title, description, onClick }: Props): JSX.Element => (
 					<Button
 						variant="contained"
 						onClick={onClick}
-						className="text-gray-800"
+						className="!text-gray-800"
 						style={{ backgroundColor: "#fff !important" }}
 					>
 						شروع کنید
