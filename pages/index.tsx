@@ -9,6 +9,7 @@ import DownloadSection from "@/components/home/download";
 import ServicesSection from "@/components/home/services";
 import CallToAction from "@/components/home/callToAction";
 import BaseLayout from "@/components/layouts/base";
+import ManageExchanges from "@/components/home/manageExchanges";
 
 const Home: NextPage = (): JSX.Element => {
 	return (
@@ -22,6 +23,7 @@ const Home: NextPage = (): JSX.Element => {
 				<Header />
 				<FirstIntro />
 				<SecondIntro />
+				<ManageExchanges />
 				<Pricing />
 				<CallToAction
 					title="امروز را با یک دوره آزمایشی رایگان سفارشی امتحان کنید"
