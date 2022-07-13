@@ -7,6 +7,7 @@ import SecondIntro from "@/components/home/secondIntro";
 import Pricing from "@/components/home/pricing";
 import DownloadSection from "@/components/home/download";
 import ServicesSection from "@/components/home/services";
+import CallToAction from "@/components/home/callToAction";
 
 const Home: NextPage = (): JSX.Element => {
 	return (
@@ -22,6 +23,14 @@ const Home: NextPage = (): JSX.Element => {
 			<FirstIntro />
 			<SecondIntro />
 			<Pricing />
+			<CallToAction
+				title="امروز را با یک دوره آزمایشی رایگان سفارشی امتحان کنید"
+				description="
+					لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+					از چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.
+				"
+				buttonName="شروع کنید"
+			/>
 			<ServicesSection />
 			<DownloadSection />
 		</div>
