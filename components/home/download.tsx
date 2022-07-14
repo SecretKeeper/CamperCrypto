@@ -6,7 +6,7 @@ import DownloadArt from "../vectors/downloadArt";
 
 const DownloadSection = (): JSX.Element => (
 	<ThemeProvider theme={MUITheme}>
-		<section className="container mx-auto mt-24">
+		<section className="container mx-auto mt-10">
 			<div className="rtl grid grid-cols-2">
 				<div className="px-8">
 					<h3 className="font-semibold text-2xl text-green-600 mb-6">

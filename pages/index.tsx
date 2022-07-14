@@ -12,6 +12,7 @@ import BaseLayout from "@/components/layouts/base";
 import ManageExchanges from "@/components/home/manageExchanges";
 import Blog from "@/components/blog/blogCard";
 import Blogs from "@/components/home/blogs";
+import Announcements from "@/components/home/announcements";
 
 const Home: NextPage = (): JSX.Element => {
 	return (
@@ -37,6 +38,7 @@ const Home: NextPage = (): JSX.Element => {
 				/>
 				<ServicesSection />
 				<Blogs />
+				<Announcements />
 				<DownloadSection />
 			</BaseLayout>
 		</div>
