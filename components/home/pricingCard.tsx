@@ -1,11 +1,5 @@
 import { Done } from "@mui/icons-material";
-import {
-	Button,
-	Card,
-	CardActionArea,
-	CardContent,
-	Typography,
-} from "@mui/material";
+import { Button, Card, CardContent } from "@mui/material";
 import { PricingCard } from "./pricing";
 
 const PricingCard = ({
@@ -13,29 +7,50 @@ const PricingCard = ({
 	features,
 	price,
 	period,
+	recommended,
 }: PricingCard): JSX.Element => (
 	<Card sx={{ maxWidth: 345 }}>
-		<CardContent className="rtl px-8">
-			<div className="font-vazir text-2xl mb-4">{plan}</div>
-			<Typography
-				gutterBottom
-				variant="h2"
-				component="div"
-				className="font-vazir text-3xl mb-6"
+		<CardContent className={`rtl px-8 ${recommended && "bg-blue-accent"}`}>
+			<div
+				className={`font-vazir ${
+					recommended ? "text-white" : "text-black"
+				} text-xl mb-2`}
 			>
-				{price} {period && <span className="text-lg">/ {period}</span>}
-			</Typography>
+				{plan}
+			</div>
+			<div
+				className={`${recommended ? "text-gray-200" : "text-gray-400"} mb-10`}
+			>
+				لورم ایپسوم متن ساختگی با تولید سادگی
+			</div>
+			<h2
+				className={`font-vazir !text-2xl ${
+					recommended ? "text-white" : "text-black"
+				} mb-6`}
+			>
+				{price} {period && <span className="!text-lg">/ {period}</span>}
+			</h2>
+			<Button
+				className={`w-full ${
+					recommended ? "text-black !bg-white" : "text-white"
+				} my-4 py-3`}
+				variant="contained"
+			>
+				همین حالا شروع کنید
+			</Button>
 			<ul className="mt-6">
 				{features &&
 					features.map((feature, index: number) => (
-						<li key={index} className="text-base mb-3">
-							<Done /> {feature}
+						<li
+							key={index}
+							className={`text-base ${
+								recommended ? "text-white" : "text-gray-800"
+							} mb-5`}
+						>
+							<Done className="text-green-400" /> {feature}
 						</li>
 					))}
 			</ul>
-			<Button className="mt-4" variant="contained">
-				شروع کنید
-			</Button>
 		</CardContent>
 	</Card>
 );

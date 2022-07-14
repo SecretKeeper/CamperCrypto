@@ -7,6 +7,7 @@ const pricingCards = [
 		plan: "شخصی",
 		price: "رایگان",
 		period: "",
+		recommended: false,
 		features: [
 			"پشتیبانی ۲۴/۷",
 			"میزبانی سفارشی",
@@ -22,6 +23,7 @@ const pricingCards = [
 		plan: "شخصی",
 		price: "دو میلیون تومان",
 		period: "ماهانه",
+		recommended: true,
 		features: [
 			"پشتیبانی ۲۴/۷",
 			"میزبانی سفارشی",
@@ -37,6 +39,7 @@ const pricingCards = [
 		plan: "شخصی",
 		price: "ده میلیون تومان",
 		period: "ماهانه",
+		recommended: false,
 		features: [
 			"پشتیبانی ۲۴/۷",
 			"میزبانی سفارشی",
