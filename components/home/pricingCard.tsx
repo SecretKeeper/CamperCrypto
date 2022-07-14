@@ -32,7 +32,7 @@ const PricingCard = ({
 			</h2>
 			<Button
 				className={`w-full ${
-					recommended ? "text-black !bg-white" : "text-white"
+					recommended ? "!text-black !bg-white" : "text-white"
 				} my-4 py-3`}
 				variant="contained"
 			>
